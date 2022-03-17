@@ -72,3 +72,42 @@ else {
 
 console.log(`Traveling ${distance} miles by ${travelType} took ${time} hours and cost $${cost}!`);
 
+let costBar = "Cost: ";
+
+for (let i = 0; i < cost; i++) {
+    costBar += "$";
+}
+console.log(costBar);
+
+let timeBar = "Time: ";
+for (let i = 0; i < time; i++) {
+    timeBar += "/";
+}
+console.log(timeBar);
+
+if (travelType ==="car") {
+    let meterCostRemaining = 1.00;
+    while (meterCostRemaining > 0) {
+        let coin = prompt(`$${meterCostRemaining} remaining. Type a coin to insert. `);
+        if(coin === "quarter") {
+            meterCostRemaining -= .25;
+            console.log("Meter cost remaining: " + meterCostRemaining); 
+        }
+        if(coin === "dime") {
+            meterCostRemaining -= .10;
+            console.log("Meter cost remaining: " + meterCostRemaining); 
+        }
+        if(coin === "nickel") {
+            meterCostRemaining -= .05;
+            console.log("Meter cost remaining: " + meterCostRemaining); 
+        }
+        if(coin === "penny") {
+            meterCostRemaining -= .01;
+            console.log("Meter cost remaining: " + meterCostRemaining); 
+        }
+    
+    }
+if (meterCostRemaining <= 0) {
+    console.log("you have paid the parking meter.");
+}
+}
